@@ -17,3 +17,6 @@ spec:
         image: shaikmustafa/cycle
         ports:
         - containerPort: 80
+
+
+        uuu
