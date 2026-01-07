@@ -1,22 +1,25 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: mydep
 spec:
-  replicas: 2
+  replicas: 3
   selector:
-    matchLabels:
-      app: my-app
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - swiggy
   template:
     metadata:
       labels:
-        app: my-app
+        app: swiggy
     spec:
       containers:
-      - name: cont-1
-        image: shaikmustafa/cycle
-        ports:
-        - containerPort: 80
-
+        - name: cont1
+          image: shaikmustafa/cycle
+          ports:
+            - containerPort: 80
 
   
